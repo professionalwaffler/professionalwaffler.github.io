@@ -28,6 +28,34 @@
             scroll-behavior: smooth; /* Smooth scrolling */
         }
 
+        /* Subscriber widget style */
+        .subscriber-widget {
+            position: fixed;
+            top: 200px;
+            left: 20px;
+            background-color: #FF0000; /* Same color as YouTube button */
+            border-radius: 10px;
+            padding: 30px;
+            width: 400px;
+            height: 200px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            z-index: 10;
+        }
+
+        .subscriber-widget h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: white; /* White text for the heading */
+        }
+
+        .subscriber-widget iframe {
+            border: 0;
+            width: 100%;
+            height: 120px;
+        }
+
+        /* Header Section */
         .header {
             background: linear-gradient(45deg, #56CCF2, #6A5ACD, #32CD32); /* Softer gradient colors */
             padding: 40px;
@@ -43,6 +71,7 @@
             margin-bottom: 20px;
         }
 
+        /* Socials Links Section */
         .socials-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -81,6 +110,7 @@
             background-color: rgba(255, 255, 255, 0.3);
         }
 
+        /* How I Made This Site */
         .how-i-made-this {
             background: linear-gradient(45deg, #56CCF2, #6A5ACD, #32CD32);
             padding: 40px;
@@ -93,46 +123,22 @@
         }
 
         .how-i-made-this h2 {
-            font-size: 36px; /* Slightly smaller, but still large */
+            font-size: 36px;
             margin-bottom: 20px;
         }
 
         .how-i-made-this p {
-            font-size: 18px; /* Increased font size for better readability */
+            font-size: 18px;
             line-height: 1.6;
             color: #dcdcdc; /* Lighter text for easier reading */
         }
 
+        /* Footer Section */
         footer {
             margin-top: 40px;
             font-size: 20px;
             color: rgba(255, 255, 255, 0.6);
             padding: 10px;
-        }
-
-        /* Scroll buttons */
-        .scroll-button {
-            position: fixed;
-            bottom: 50px;
-            right: 30px;
-            background-color: rgba(0, 255, 255, 0.8);
-            color: #222222;
-            padding: 15px 20px;
-            border-radius: 50%;
-            font-size: 24px;
-            cursor: pointer;
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
-            z-index: 10;
-            border: none;
-            transition: transform 0.3s;
-        }
-
-        .scroll-button:hover {
-            transform: scale(1.1);
-        }
-
-        .scroll-up {
-            bottom: 110px;
         }
 
         /* How This Was Made Possible Section */
@@ -163,9 +169,43 @@
             text-decoration: underline;
         }
 
+        /* Scroll Buttons */
+        .scroll-button {
+            position: fixed;
+            bottom: 50px;
+            right: 30px;
+            background-color: rgba(0, 255, 255, 0.8);
+            color: #222222;
+            padding: 15px 20px;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+            z-index: 10;
+            border: none;
+            transition: transform 0.3s;
+        }
+
+        .scroll-button:hover {
+            transform: scale(1.1);
+        }
+
+        .scroll-up {
+            bottom: 110px;
+        }
+
     </style>
 </head>
 <body>
+
+    <!-- Subscriber Widget -->
+    <div class="subscriber-widget">
+        <h2>YouTube Subscribers</h2>
+        <iframe 
+            src="https://livecounts.io/embed/youtube-live-subscriber-counter/UCWzRD1FU_TYl2Rvoiil5QDQ" 
+            frameborder="0">
+        </iframe>
+    </div>
 
     <!-- Header Section -->
     <div class="header">
@@ -206,6 +246,11 @@
         </p>
     </div>
 
+    <!-- "This Was Made Possible" Section -->
+    <div class="how-this-was-made">
+        <p>This Was Made Possible with <a href="https://github.com" target="_blank">GitHub</a> and <a href="https://chat.openai.com" target="_blank">ChatGPT</a></p>
+    </div>
+
     <!-- Footer Section -->
     <footer>
         <p>-WaffleWeb-</p>
@@ -214,11 +259,6 @@
     <!-- Scroll Buttons -->
     <button class="scroll-button" id="scrollDownButton">&#x2193;</button>
     <button class="scroll-button scroll-up" id="scrollUpButton">&#x2191;</button>
-
-    <!-- "This Was Made Possible" Section -->
-    <div class="how-this-was-made">
-        <p>This Was Made Possible with <a href="https://github.com" target="_blank">GitHub</a> and <a href="https://chat.openai.com" target="_blank">ChatGPT</a></p>
-    </div>
 
     <script>
         // Smooth scrolling for scroll buttons
@@ -267,5 +307,6 @@
             }
         });
     </script>
+
 </body>
 </html>
