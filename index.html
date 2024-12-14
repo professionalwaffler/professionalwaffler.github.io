@@ -3,24 +3,269 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Waffles' Website</title>
+    <title>Retro Socials</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
-        body {
-            background-color: purple;
-            color: white;
-            font-family: Arial, sans-serif;
-            text-align: center;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
-        h1 {
-            font-size: 3em;
-            margin-top: 20%;
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background-color: #222222; /* Darker background for easier reading */
+            color: #ffffff;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            flex-direction: column;
+            text-align: center;
+            padding-top: 20px; /* Add padding for better spacing */
+            padding-bottom: 30px;
+            scroll-behavior: smooth; /* Smooth scrolling */
         }
+
+        .header {
+            background: linear-gradient(45deg, #56CCF2, #6A5ACD, #32CD32); /* Softer gradient colors */
+            padding: 40px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+        }
+
+        .header h1 {
+            font-size: 48px;
+            text-shadow: 0px 0px 8px rgba(0, 255, 255, 0.6), 0px 0px 10px rgba(106, 90, 205, 0.6), 0px 0px 12px rgba(50, 205, 50, 0.6);
+            margin-bottom: 20px;
+        }
+
+        .socials-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+            padding: 20px;
+            width: 90%;
+            max-width: 1000px;
+        }
+
+        .social-card {
+            background-color: rgba(0, 0, 0, 0.8); /* Darker background for the cards */
+            border-radius: 10px;
+            padding: 40px;
+            transition: transform 0.3s ease-in-out;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .social-card:hover {
+            transform: scale(1.05);
+        }
+
+        .social-card a {
+            color: #ffffff;
+            font-size: 24px; /* Larger font size for easier readability */
+            text-decoration: none;
+            display: block;
+            padding: 18px 28px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            margin: 15px 0;
+            transition: background-color 0.3s;
+        }
+
+        .social-card a:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .how-i-made-this {
+            background: linear-gradient(45deg, #56CCF2, #6A5ACD, #32CD32);
+            padding: 40px;
+            width: 90%;
+            max-width: 1000px;
+            margin-top: 40px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.6);
+        }
+
+        .how-i-made-this h2 {
+            font-size: 36px; /* Slightly smaller, but still large */
+            margin-bottom: 20px;
+        }
+
+        .how-i-made-this p {
+            font-size: 18px; /* Increased font size for better readability */
+            line-height: 1.6;
+            color: #dcdcdc; /* Lighter text for easier reading */
+        }
+
+        footer {
+            margin-top: 40px;
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.6);
+            padding: 10px;
+        }
+
+        /* Scroll buttons */
+        .scroll-button {
+            position: fixed;
+            bottom: 50px;
+            right: 30px;
+            background-color: rgba(0, 255, 255, 0.8);
+            color: #222222;
+            padding: 15px 20px;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+            z-index: 10;
+            border: none;
+            transition: transform 0.3s;
+        }
+
+        .scroll-button:hover {
+            transform: scale(1.1);
+        }
+
+        .scroll-up {
+            bottom: 110px;
+        }
+
+        /* How This Was Made Possible Section */
+        .how-this-was-made {
+            background-color: #333333;
+            padding: 20px;
+            margin-top: 50px;
+            text-align: center;
+            font-size: 18px;
+            color: #ffffff;
+            width: 100%;
+            position: relative;
+        }
+
+        .how-this-was-made span {
+            font-weight: bold;
+            color: #56CCF2; /* Cyan color for emphasis */
+        }
+
+        /* Adding link styling for GitHub and ChatGPT */
+        .how-this-was-made a {
+            color: #56CCF2;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .how-this-was-made a:hover {
+            text-decoration: underline;
+        }
+
     </style>
 </head>
 <body>
-    <h1>Waffles' Website</h1>
+
+    <!-- Header Section -->
+    <div class="header">
+        <h1>Support Me!</h1>
+    </div>
+
+    <!-- Socials Links Section -->
+    <div class="socials-container">
+        <div class="social-card">
+            <a href="https://www.youtube.com/@Wafflesmaybe/featured" target="_blank">
+                YouTube
+            </a>
+            <a href="https://www.twitch.tv/maybewaffles4" target="_blank">
+                Twitch
+            </a>
+            <a href="https://www.youtube.com/@wafflesvods" target="_blank">
+                VODS channel
+            </a>
+        </div>
+        <div class="social-card">
+            <a href="about.html">
+                About
+            </a>
+            <a href="friends.html">
+                Friends
+            </a>
+            <a href="teasers.html">
+                Teasers
+            </a>
+        </div>
+    </div>
+
+    <!-- New Rectangle: How I Made This Site -->
+    <div class="how-i-made-this">
+        <h2>How I Made This Site</h2>
+        <p>
+            This site was built using HTML, CSS, and a touch of creativity! I wanted to create a retro, simple, and functional way to showcase my social media accounts. The design draws inspiration from retro games and vibrant colors. The gradient background, pixelated font, and hover effects were all done to give this site that old-school gaming feel. 
+        </p>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>-WaffleWeb-</p>
+    </footer>
+
+    <!-- Scroll Buttons -->
+    <button class="scroll-button" id="scrollDownButton">&#x2193;</button>
+    <button class="scroll-button scroll-up" id="scrollUpButton">&#x2191;</button>
+
+    <!-- "This Was Made Possible" Section -->
+    <div class="how-this-was-made">
+        <p>This Was Made Possible with <a href="https://github.com" target="_blank">GitHub</a> and <a href="https://chat.openai.com" target="_blank">ChatGPT</a></p>
+    </div>
+
+    <script>
+        // Smooth scrolling for scroll buttons
+        document.getElementById('scrollDownButton').addEventListener('click', function () {
+            window.scrollBy({
+                top: window.innerHeight,
+                left: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        document.getElementById('scrollUpButton').addEventListener('click', function () {
+            window.scrollBy({
+                top: -window.innerHeight,
+                left: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Enhance mouse scroll with smooth scrolling
+        let lastWheelTime = 0;
+        const scrollDelay = 100; // Delay in milliseconds to prevent too rapid scroll behavior
+
+        window.addEventListener('wheel', function (e) {
+            let currentTime = new Date().getTime();
+            if (currentTime - lastWheelTime < scrollDelay) {
+                e.preventDefault();
+                return;
+            }
+            lastWheelTime = currentTime;
+
+            if (e.deltaY > 0) {
+                // Scroll Down
+                window.scrollBy({
+                    top: window.innerHeight,
+                    left: 0,
+                    behavior: 'smooth'
+                });
+            } else {
+                // Scroll Up
+                window.scrollBy({
+                    top: -window.innerHeight,
+                    left: 0,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    </script>
 </body>
 </html>
