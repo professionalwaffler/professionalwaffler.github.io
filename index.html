@@ -14,50 +14,23 @@
 
         body {
             font-family: 'Press Start 2P', cursive;
-            background-color: #222222; /* Darker background for easier reading */
+            background-color: #222222;
             color: #ffffff;
             display: flex;
             justify-content: flex-start;
             align-items: center;
-            height: 100vh;
-            overflow: hidden;
+            height: 100%;
+            overflow-y: auto;
             flex-direction: column;
             text-align: center;
-            padding-top: 20px; /* Add padding for better spacing */
+            padding-top: 20px;
             padding-bottom: 30px;
-            scroll-behavior: smooth; /* Smooth scrolling */
-        }
-
-        /* Subscriber widget style */
-        .subscriber-widget {
-            position: fixed;
-            top: 200px;
-            left: 20px;
-            background-color: #FF0000; /* Same color as YouTube button */
-            border-radius: 10px;
-            padding: 30px;
-            width: 400px;
-            height: 200px;
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
-            text-align: center;
-            z-index: 10;
-        }
-
-        .subscriber-widget h2 {
-            font-size: 24px;
-            margin-bottom: 20px;
-            color: white; /* White text for the heading */
-        }
-
-        .subscriber-widget iframe {
-            border: 0;
-            width: 100%;
-            height: 120px;
+            scroll-behavior: smooth;
         }
 
         /* Header Section */
         .header {
-            background: linear-gradient(45deg, #56CCF2, #6A5ACD, #32CD32); /* Softer gradient colors */
+            background: linear-gradient(45deg, #56CCF2, #6A5ACD, #32CD32);
             padding: 40px;
             width: 100%;
             text-align: center;
@@ -83,7 +56,7 @@
         }
 
         .social-card {
-            background-color: rgba(0, 0, 0, 0.8); /* Darker background for the cards */
+            background-color: rgba(0, 0, 0, 0.8);
             border-radius: 10px;
             padding: 40px;
             transition: transform 0.3s ease-in-out;
@@ -96,7 +69,7 @@
 
         .social-card a {
             color: #ffffff;
-            font-size: 24px; /* Larger font size for easier readability */
+            font-size: 24px;
             text-decoration: none;
             display: block;
             padding: 18px 28px;
@@ -130,7 +103,7 @@
         .how-i-made-this p {
             font-size: 18px;
             line-height: 1.6;
-            color: #dcdcdc; /* Lighter text for easier reading */
+            color: #dcdcdc;
         }
 
         /* Footer Section */
@@ -155,10 +128,9 @@
 
         .how-this-was-made span {
             font-weight: bold;
-            color: #56CCF2; /* Cyan color for emphasis */
+            color: #56CCF2;
         }
 
-        /* Adding link styling for GitHub and ChatGPT */
         .how-this-was-made a {
             color: #56CCF2;
             text-decoration: none;
@@ -169,43 +141,9 @@
             text-decoration: underline;
         }
 
-        /* Scroll Buttons */
-        .scroll-button {
-            position: fixed;
-            bottom: 50px;
-            right: 30px;
-            background-color: rgba(0, 255, 255, 0.8);
-            color: #222222;
-            padding: 15px 20px;
-            border-radius: 50%;
-            font-size: 24px;
-            cursor: pointer;
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
-            z-index: 10;
-            border: none;
-            transition: transform 0.3s;
-        }
-
-        .scroll-button:hover {
-            transform: scale(1.1);
-        }
-
-        .scroll-up {
-            bottom: 110px;
-        }
-
     </style>
 </head>
 <body>
-
-    <!-- Subscriber Widget -->
-    <div class="subscriber-widget">
-        <h2>YouTube Subscribers</h2>
-        <iframe 
-            src="https://livecounts.io/embed/youtube-live-subscriber-counter/UCWzRD1FU_TYl2Rvoiil5QDQ" 
-            frameborder="0">
-        </iframe>
-    </div>
 
     <!-- Header Section -->
     <div class="header">
@@ -255,58 +193,6 @@
     <footer>
         <p>-WaffleWeb-</p>
     </footer>
-
-    <!-- Scroll Buttons -->
-    <button class="scroll-button" id="scrollDownButton">&#x2193;</button>
-    <button class="scroll-button scroll-up" id="scrollUpButton">&#x2191;</button>
-
-    <script>
-        // Smooth scrolling for scroll buttons
-        document.getElementById('scrollDownButton').addEventListener('click', function () {
-            window.scrollBy({
-                top: window.innerHeight,
-                left: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        document.getElementById('scrollUpButton').addEventListener('click', function () {
-            window.scrollBy({
-                top: -window.innerHeight,
-                left: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // Enhance mouse scroll with smooth scrolling
-        let lastWheelTime = 0;
-        const scrollDelay = 100; // Delay in milliseconds to prevent too rapid scroll behavior
-
-        window.addEventListener('wheel', function (e) {
-            let currentTime = new Date().getTime();
-            if (currentTime - lastWheelTime < scrollDelay) {
-                e.preventDefault();
-                return;
-            }
-            lastWheelTime = currentTime;
-
-            if (e.deltaY > 0) {
-                // Scroll Down
-                window.scrollBy({
-                    top: window.innerHeight,
-                    left: 0,
-                    behavior: 'smooth'
-                });
-            } else {
-                // Scroll Up
-                window.scrollBy({
-                    top: -window.innerHeight,
-                    left: 0,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    </script>
 
 </body>
 </html>
